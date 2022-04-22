@@ -120,8 +120,8 @@ public class BMenuBar extends MenuBar implements InterObjectCommunicatorEventLis
 			PopulateImageMenu(xmlHelper.GetAbsoluteFilePathStringFromXml("currentImagePath", configXML, useAppData, appDataFolderName));
 		} else {
 			if (useAppData) {
-				consoleHelper.PrintMessage(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "images");
-				PopulateImageMenu(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "images");
+				consoleHelper.PrintMessage(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "images");
+				PopulateImageMenu(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "images");
 			} else {
 				consoleHelper.PrintMessage(System.getProperty("user.dir") + File.separator + "images");
 				PopulateImageMenu(System.getProperty("user.dir") + File.separator + "images");
@@ -243,8 +243,8 @@ public class BMenuBar extends MenuBar implements InterObjectCommunicatorEventLis
 			}
 		} else {
 			if (useAppData) {
-				consoleHelper.PrintMessage(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "images");
-				imageToLoad = fileHelper.GetFilenameFromFileChooser(imageFileExtensions, imageFileDescription, System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "images");
+				consoleHelper.PrintMessage(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "images");
+				imageToLoad = fileHelper.GetFilenameFromFileChooser(imageFileExtensions, imageFileDescription, System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "images");
 			} else {
 				consoleHelper.PrintMessage(System.getProperty("user.dir") + File.separator + "images");
 				imageToLoad = fileHelper.GetFilenameFromFileChooser(imageFileExtensions, imageFileDescription, System.getProperty("user.dir") + File.separator + "images");
@@ -476,7 +476,7 @@ public class BMenuBar extends MenuBar implements InterObjectCommunicatorEventLis
 		controlPanel.excludeTranslucentsCheckboxPanel.checkbox.setSelected(xmlHelper.GetIntFromXml("beadsToExclude.translucents", xmlHelper.projectXML) == 1 ? true : false);
 
 		if (useAppData) {
-			imageController.pallette.GetPalletteFromXml(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "pallettes" + File.separator + controlPanel.customPalletteFiles[0][controlPanel.customPallette.getSelectedIndex()], xmlHelper);
+			imageController.pallette.GetPalletteFromXml(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "pallettes" + File.separator + controlPanel.customPalletteFiles[0][controlPanel.customPallette.getSelectedIndex()], xmlHelper);
 		} else {
 			imageController.pallette.GetPalletteFromXml(System.getProperty("user.dir") + File.separator + "pallettes" + File.separator + controlPanel.customPalletteFiles[0][controlPanel.customPallette.getSelectedIndex()], xmlHelper);
 		}
@@ -509,7 +509,7 @@ public class BMenuBar extends MenuBar implements InterObjectCommunicatorEventLis
 		imageController.setOriginalCleanedImage(xmlHelper.GetAbsoluteFilePathStringFromXml("imageFile", xmlHelper.projectXML, useAppData, appDataFolderName));
 		if (GlobalConstants.pixelArtMultiPaletteMode == 1) {
 			if (useAppData) {
-				imageController.loadColorMap(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "ColorMaps" + File.separator + "default.png");
+				imageController.loadColorMap(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "ColorMaps" + File.separator + "default.png");
 			} else {
 				imageController.loadColorMap(System.getProperty("user.dir") + File.separator + "ColorMaps" + File.separator + "default.png");
 			}

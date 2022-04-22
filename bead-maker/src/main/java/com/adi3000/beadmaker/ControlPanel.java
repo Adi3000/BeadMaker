@@ -161,8 +161,8 @@ public class ControlPanel extends JPanel implements InterObjectCommunicatorEvent
 			public void actionPerformed(ActionEvent actionEvent) {
 				
 				if (useAppData) {
-					consoleHelper.PrintMessage(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + customPalletteFiles[0][customPallette.getSelectedIndex()]);
-					pallette.GetPalletteFromXml(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "pallettes" + File.separator + customPalletteFiles[0][customPallette.getSelectedIndex()], xMLHelper);
+					consoleHelper.PrintMessage(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + customPalletteFiles[0][customPallette.getSelectedIndex()]);
+					pallette.GetPalletteFromXml(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "pallettes" + File.separator + customPalletteFiles[0][customPallette.getSelectedIndex()], xMLHelper);
 				} else {
 					consoleHelper.PrintMessage(System.getProperty("user.dir") + File.separator + customPalletteFiles[0][customPallette.getSelectedIndex()]);
 					pallette.GetPalletteFromXml(System.getProperty("user.dir") + File.separator + "pallettes" + File.separator + customPalletteFiles[0][customPallette.getSelectedIndex()], xMLHelper);
@@ -185,7 +185,7 @@ public class ControlPanel extends JPanel implements InterObjectCommunicatorEvent
 			public void actionPerformed(ActionEvent actionEvent) {
 				
 				if (useAppData) {
-					imageController.loadLUT(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "LUTs" + File.separator + lutFiles[0][lutSelector.getSelectedIndex()]);
+					imageController.loadLUT(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "LUTs" + File.separator + lutFiles[0][lutSelector.getSelectedIndex()]);
 				} else {
 					imageController.loadLUT(System.getProperty("user.dir") + File.separator + "LUTs" + File.separator + lutFiles[0][lutSelector.getSelectedIndex()]);
 				}
@@ -315,7 +315,7 @@ public class ControlPanel extends JPanel implements InterObjectCommunicatorEvent
 		File pallettePath;
 		
 		if (useAppData) {
-			pallettePath = new File(System.getenv("APPDATA") + File.separator + appDataFolderName, "pallettes");
+			pallettePath = new File(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName, "pallettes");
 		} else {
 			pallettePath = new File(System.getProperty("user.dir"), "pallettes");
 		}
@@ -357,7 +357,7 @@ public class ControlPanel extends JPanel implements InterObjectCommunicatorEvent
         File lutPath;
         
         if (useAppData) {
-        	lutPath = new File(System.getenv("APPDATA") + File.separator + appDataFolderName, "LUTs");
+        	lutPath = new File(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName, "LUTs");
 		} else {
 			lutPath = new File(System.getProperty("user.dir"), "LUTs");
 		}

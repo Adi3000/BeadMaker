@@ -34,7 +34,7 @@ public class BeadMaker implements InterObjectCommunicatorEventListener
 	private String objectName = "BEAD_MAKER";
 	
 	private final boolean useAppData = true;
-	private final String appDataFolderName = "Nostalgic Pixels Pixel Perfect";
+	private final String appDataFolderName = "BeadMaker";
 	
 	public ImageController imageController;
 	public Palette pallette;

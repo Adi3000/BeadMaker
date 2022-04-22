@@ -108,11 +108,9 @@ public class XmlHelper {
 
 		if (!myString.contains(":")) {
 			// myString = sketchPath("") + myString;
-			if (useAppData) {
-				myString = System.getenv("APPDATA") + File.separator + appDataFolderName +  myString;
-			} else {
-				myString = System.getProperty("user.dir") + myString;
-			}
+			myString = System.getProperty("beadmaker.dir") + File.separator + appDataFolderName +  myString;
+			System.out.println("myString:" + myString);
+
 		}
 
 		consoleHelper.PrintMessage("node = " + myString);
@@ -127,8 +125,8 @@ public class XmlHelper {
 
 		// ConsoleHelper.PrintMessage("XML dump = " + xml[0].toString());
 
-		//String[] nodeName = nodePath.split("\\.");
-		String[] nodeName = nodePath.split(File.separator + ".");
+		String[] nodeName = nodePath.split("\\.");
+		// String[] nodeName = nodePath.split(File.separator + ".");
 
 		// drill into the xml nodes (replacing "node" with the next node down on each
 		// iteration) until we reach the final node
@@ -235,7 +233,7 @@ public class XmlHelper {
 				xmlFile = new File(xmlFilePath);
 			} else {
 				if (useAppData)	{
-					xmlFile = new File(System.getenv("APPDATA") + File.separator + appDataFolderName, xmlFilePath);
+					xmlFile = new File(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName, xmlFilePath);
 				} else {
 					xmlFile = new File(System.getProperty("user.dir"), xmlFilePath);
 				}

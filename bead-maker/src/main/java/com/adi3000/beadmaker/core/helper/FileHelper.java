@@ -55,15 +55,19 @@ public class FileHelper {
 		File file;
 		
 		if (filePath.contains(":")) {
+		    System.out.println("1");
 			file = new File(filePath);
 		} else {
 			if (useAppData) {
-				file = new File(System.getenv("APPDATA") + File.separator + appDataFolderName, filePath);
+			    System.out.println("2 - " + System.getProperty("beadmaker.dir") + File.separator + appDataFolderName );
+			    System.out.println("filePath - " + filePath);
+				file = new File(filePath);
 			} else {
+			    System.out.println("3");
 				file = new File(System.getProperty("user.dir"), filePath);
 			}
 		}
-		
+		System.out.println("file exists - " + file.exists());
 		return file;
 	}
 	

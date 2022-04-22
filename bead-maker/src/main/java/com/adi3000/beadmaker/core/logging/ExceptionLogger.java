@@ -19,11 +19,7 @@ public class ExceptionLogger implements UncaughtExceptionHandler {
 		logger = Logger.getLogger("MyLog");
 	    
 	    try {  
-	    	if (useAppData) {
-	    		fileHandler = new FileHandler(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "log" + File.separator + "log.txt");  
-	    	} else {
-	    		fileHandler = new FileHandler(System.getProperty("user.dir") + File.separator + "log" + File.separator + "log.txt");
-	    	}
+	        fileHandler = new FileHandler(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "log" + File.separator + "log.txt");
 	        logger.addHandler(fileHandler);
 	        SimpleFormatter formatter = new SimpleFormatter();  
 	        fileHandler.setFormatter(formatter);  

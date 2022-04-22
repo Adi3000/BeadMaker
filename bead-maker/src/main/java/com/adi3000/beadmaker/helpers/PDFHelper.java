@@ -97,7 +97,7 @@ public class PDFHelper {
 		
 		File dataDir;
 //		if (useAppData) {
-//			dataDir = new File(System.getenv("APPDATA") + File.separator + appDataFolderName, File.separator);
+//			dataDir = new File(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName, File.separator);
 //		} else {
 //			dataDir = new File(System.getProperty("user.dir"), File.separator);
 //		}

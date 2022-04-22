@@ -2,8 +2,8 @@
 TO READ THIS XML IN HUMAN_READABLE TABLE FORMAT, DUMP THE XML INTO THIS UTILITY:
 http://codebeautify.org/xml-to-excel-converter
 --><project>	
-	<imageFile>\images\inigo_montoya.png</imageFile>
-	<palletteFile>\pallettes\_default_pallette_withSorting.xml</palletteFile>
+	<imageFile>/images/inigo_montoya.png</imageFile>
+	<palletteFile>/pallettes/_default_pallette_withSorting.xml</palletteFile>
 	<dialValues>
 		<red>0</red>
 		<green>0</green>

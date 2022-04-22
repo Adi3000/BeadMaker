@@ -34,11 +34,7 @@ public class WindowController extends JFrame {
 		//this.setState(Frame.NORMAL);
 		//this.setVisible(true);
 		try {
-			if (useAppData) {
-				this.setIconImage(ImageIO.read(new File(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "icon" + File.separator + "BeadMakerIcon.png")));
-			} else {
-				this.setIconImage(ImageIO.read(new File(System.getProperty("user.dir") + File.separator + "icon" + File.separator + "BeadMakerIcon.png")));
-			}
+		    this.setIconImage(ImageIO.read(new File(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "icon" + File.separator + "BeadMakerIcon.png")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

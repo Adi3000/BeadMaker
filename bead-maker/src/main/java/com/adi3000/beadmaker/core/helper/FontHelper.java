@@ -30,8 +30,8 @@ public class FontHelper {
 		try {
 		    //create the font to use. Specify the size!
 			if (useAppData) {
-				consoleHelper.PrintMessage("Attempting to load font file: " + System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "fonts" + File.separator + fontFileName);
-				font = Font.createFont(Font.TRUETYPE_FONT, new File(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "fonts" + File.separator + fontFileName)).deriveFont((float)fontSize);
+				consoleHelper.PrintMessage("Attempting to load font file: " + System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "fonts" + File.separator + fontFileName);
+				font = Font.createFont(Font.TRUETYPE_FONT, new File(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "fonts" + File.separator + fontFileName)).deriveFont((float)fontSize);
 			} else {
 				consoleHelper.PrintMessage("Attempting to load font file: " + System.getProperty("user.dir") + File.separator + "fonts" + File.separator + fontFileName);
 				font = Font.createFont(Font.TRUETYPE_FONT, new File(System.getProperty("user.dir") + File.separator + "fonts" + File.separator + fontFileName)).deriveFont((float)fontSize);

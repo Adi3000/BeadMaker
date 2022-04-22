@@ -2,7 +2,7 @@
 TO READ THIS XML IN HUMAN_READABLE TABLE FORMAT, DUMP THE XML INTO THIS UTILITY:
 http://codebeautify.org/xml-to-excel-converter
 --><config>	
-	<defaultPallette>\pallettes\_default_pallette_withSorting.xml</defaultPallette>
+	<defaultPallette>/pallettes/_default_pallette_withSorting.xml</defaultPallette>
 	<beadHighlightColor><!-- NOT CURRENTLY CONSUMED-->
 		<red>44</red>
 		<green>44</green>
@@ -16,7 +16,7 @@ http://codebeautify.org/xml-to-excel-converter
 	</window>
 	<defaultImagePath>images</defaultImagePath>
 	<currentImagePath>images</currentImagePath>
-	<defaultProjectFilePath>\config\default_project.pbp</defaultProjectFilePath>
-	<currentProjectFilePath>F:\My Documents\Dropbox\Perler Bead Patterns\_Projects\Magic the Gathering\Marton Stromgald</currentProjectFilePath>
+	<defaultProjectFilePath>/config/default_project.pbp</defaultProjectFilePath>
+	<currentProjectFilePath>F:/My Documents/Dropbox/Perler Bead Patterns/_Projects/Magic the Gathering/Marton Stromgald</currentProjectFilePath>
 	<expertMode>1</expertMode>
 </config>

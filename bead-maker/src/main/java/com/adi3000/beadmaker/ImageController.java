@@ -185,7 +185,7 @@ public class ImageController implements InterObjectCommunicatorEventListener {
 
 		if (GlobalConstants.applyLUT == 1) {
 			if (useAppData) {
-				loadLUT(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "LUTs" + File.separator + "default.png");
+				loadLUT(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "LUTs" + File.separator + "default.png");
 			} else {
 				loadLUT(System.getProperty("user.dir") + File.separator + "LUTs" + File.separator + "default.png");
 			}
@@ -195,7 +195,7 @@ public class ImageController implements InterObjectCommunicatorEventListener {
 		
 		if (GlobalConstants.pixelArtMultiPaletteMode == 1) {
 			if (useAppData) {
-				loadColorMap(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "ColorMaps" + File.separator + "default.png");
+				loadColorMap(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "ColorMaps" + File.separator + "default.png");
 			} else {
 				loadColorMap(System.getProperty("user.dir") + File.separator + "ColorMaps" + File.separator + "default.png");
 			}
@@ -657,7 +657,7 @@ public class ImageController implements InterObjectCommunicatorEventListener {
 				setOriginalCleanedImage((String) o);
 				if (GlobalConstants.pixelArtMultiPaletteMode == 1) {
 					if (useAppData) {
-						loadColorMap(System.getenv("APPDATA") + File.separator + appDataFolderName + File.separator + "ColorMaps" + File.separator + "default.png");
+						loadColorMap(System.getProperty("beadmaker.dir") + File.separator + appDataFolderName + File.separator + "ColorMaps" + File.separator + "default.png");
 					} else {
 						loadColorMap(System.getProperty("user.dir") + File.separator + "ColorMaps" + File.separator + "default.png");
 					}

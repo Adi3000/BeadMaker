@@ -41,7 +41,7 @@ public class GraphicalBorderPanel extends JPanel {
 		this.useAppData = myUseAppData;
 		this.appDataFolderName = myAppDataFolderName;
 		if (useAppData) {
-			this.userFolder = System.getenv("APPDATA") + File.separator + appDataFolderName;
+			this.userFolder = System.getProperty("beadmaker.dir") + File.separator + appDataFolderName;
 		} else {
 			this.userFolder = System.getProperty("user.dir");
 		}
