@@ -60,7 +60,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}.lib</outputDirectory>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -73,7 +73,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <classpathPrefix>${project.build.finalName}.lib/</classpathPrefix>
+                            <classpathPrefix>lib</classpathPrefix>
                             <mainClass>com.adi3000.beadmaker.BeadMaker</mainClass>
                         </manifest>
                     </archive>
